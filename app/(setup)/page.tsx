@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { InitialModal } from "@/components/modals/initial-modal";
 
-export const SetupPage = async () => {
+const SetupPage = async () => {
     const profile = await initialProfile();
 
     const server = await db.server.findFirst({
