@@ -1,6 +1,6 @@
 "use client"
 
-export const ServerPage = () => {
+const ServerPage = () => {
     return ( 
         <div>
             This is the server homepage
