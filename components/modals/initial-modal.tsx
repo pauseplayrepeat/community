@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FileUpload } from "../file-upload";
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -78,11 +79,11 @@ export const InitialModal = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormControl>
-                            {/* <FileUpload
+                            <FileUpload
                               endpoint="serverImage"
                               value={field.value}
                               onChange={field.onChange}
-                            /> */}
+                            />
                           </FormControl>
                         </FormItem>
                       )}
