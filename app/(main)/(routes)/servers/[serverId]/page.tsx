@@ -1,9 +1,7 @@
-export const ServerPage = () => {
+export default function ServerPage() {
     return ( 
         <div>
             This is a server page
         </div>
      );
 }
-
-export default ServerPage;
