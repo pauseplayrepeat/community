@@ -1,7 +1,7 @@
 import { AccessToken } from "livekit-server-sdk";
 import { NextRequest, NextResponse } from "next/server";
 
-export const config = {
+export const runtimeConfig = {
     runtime: "edge",
 }
 
