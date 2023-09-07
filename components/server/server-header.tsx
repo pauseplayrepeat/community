@@ -47,15 +47,19 @@ export const ServerHeader = ({
                     </DropdownMenuItem>
                 )}
                 {isModerator || isAdmin && (
-                    <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
-                       Manage Members 
-                       <Users className="h-4 w-4 ml-auto"/>
+                    <DropdownMenuItem 
+                        className="px-3 py-2 text-sm cursor-pointer"
+                        onClick={() => onOpen("editServer", { server })}
+                    >
+                       Server Settings
+                       <Settings className="h-4 w-4 ml-auto"/>
                     </DropdownMenuItem>
                 )}
                 {isModerator || isAdmin && (
+                    
                     <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
-                       Server Settings
-                       <Settings className="h-4 w-4 ml-auto"/>
+                       Manage Members 
+                       <Users className="h-4 w-4 ml-auto"/>
                     </DropdownMenuItem>
                 )}
                 {isModerator || isAdmin && (
