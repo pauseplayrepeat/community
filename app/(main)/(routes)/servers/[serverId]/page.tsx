@@ -1,7 +1,13 @@
+import { MediaRoom } from "@/components/media-room";
+
 const ServerPage = () => {
     return ( 
         <div>
-            This is a server page
+            <MediaRoom 
+                chatId="test"
+                video={true}
+                audio={true}
+            />
         </div>
      );
 }
