@@ -25,7 +25,7 @@ export const MobileToggle = ({
         <div className="w-[72px]">
           <NavigationSidebar />
         </div>
-        <ServerSidebar serverId={serverId} className="flex"/>
+        <ServerSidebar serverId={serverId}/>
       </SheetContent>
     </Sheet>
   )
