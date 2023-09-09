@@ -26,7 +26,7 @@ export const ChatHeader = ({
             {type === "conversation" && (
                 <UserAvatar
                     src={imageUrl}
-                    className="h-2 w-2 mr-2"
+                    className="h-4 w-4 mr-2"
                 />
             )}
             <p className="font-semibold text-md text-black dark:text-white">
