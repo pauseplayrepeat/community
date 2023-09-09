@@ -60,9 +60,15 @@ const ChannelsPage = async ({
                <div>
                     Future Messages
                </div>
-               <div>
-               </div>
-               <ChatInput />
+               <ChatInput
+                    apiUrl="/api/socket/messages"
+                    query={{ 
+                        channelId: channel.id,
+                        serverId: channel.serverId,
+                    }}
+                    name={channel.name}
+                    type="channel"
+                />
             </div>
         </div>
         

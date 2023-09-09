@@ -1,4 +1,5 @@
 import ChatHeader from "@/components/chat/chat-header";
+import { ChatInput } from "@/components/chat/chat-input";
 import { getOrCreateConversation } from "@/lib/conversation";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
@@ -46,6 +47,8 @@ const MemberIdPage = async ({
 
     const otherMember = memberOne.profileId === profile.id ? memberTwo : memberOne;
 
+    
+
     return ( 
         <div>
             <ChatHeader 
@@ -54,6 +57,9 @@ const MemberIdPage = async ({
                 serverId={params.serverId}
                 type="conversation"
             />
+            <div>
+               
+            </div>
         </div>
      );
 }
