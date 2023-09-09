@@ -56,7 +56,7 @@ export const ServerSidebar = async ({
     const role = server.members.find((member) => member.profileId === profile.id)?.role;
 
     return ( 
-        <div className="flex flex-col h-full text-primary dark:bg-[#2B2D31] bg-[#F2F3F5]">
+        <div className="flex flex-col h-full space-y-[2px] text-primary dark:bg-[#2B2D31] bg-[#F2F3F5]">
             <ServerHeader 
                 server={server}
                 role={role}
@@ -75,6 +75,7 @@ export const ServerSidebar = async ({
                             label="Text Channels"
                             
                         />
+                        <div className="space-y-[2px]">
                         {textChannels.map((channel) => (
                             <ServerChannel 
                                 key={channel.id}
@@ -83,6 +84,7 @@ export const ServerSidebar = async ({
                                 role={role}
                             />
                         ))}
+                        </div>
                     </div>
                 )}
                 {!!audioChannels?.length && (
@@ -94,6 +96,7 @@ export const ServerSidebar = async ({
                             label="Voice Channels"
                             
                         />
+                        <div className="space-y-[2px]">
                         {audioChannels.map((channel) => (
                             <ServerChannel 
                                 key={channel.id}
@@ -102,6 +105,7 @@ export const ServerSidebar = async ({
                                 role={role}
                             />
                         ))}
+                        </div>
                     </div>
                 )}
                 {!!videoChannels?.length && (
@@ -113,6 +117,7 @@ export const ServerSidebar = async ({
                             label="Video Channels"
                             
                         />
+                        <div className="space-y-[2px]">
                         {videoChannels.map((channel) => (
                             <ServerChannel 
                                 key={channel.id}
@@ -121,6 +126,7 @@ export const ServerSidebar = async ({
                                 role={role}
                             />
                         ))}
+                        </div>
                     </div>
                 )}
                 {!!members?.length && (
@@ -132,11 +138,15 @@ export const ServerSidebar = async ({
                             server={server}
                             
                         />
+                        <div className="space-y-[2px]">
                         {members.map((member) => (
                             <ServerMember 
                                 key={member.id}
+                                member={member}
+                                server={server}
                             />
                         ))}
+                        </div>
                     </div>
                 )}
             </ScrollArea>
