@@ -3,6 +3,9 @@ import { db } from "@/lib/db";
 import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { ServerHeader } from "./server-header";
+import { ScrollArea } from "../ui/scroll-area";
+import { Separator } from "../ui/separator";
+import { ServerSection } from "./server-section";
 
 interface ServerSidebarProps {
     serverId: string;
@@ -56,6 +59,23 @@ export const ServerSidebar = async ({
                 server={server}
                 role={role}
             />
+            <ScrollArea>
+                <div>
+                    Search
+                </div>
+                <Separator />
+                {!!textChannels?.length && (
+                    <div>
+                        <ServerSection 
+                            sectionType="channels"
+                            channelType={ChannelType.TEXT}
+                            role={role}
+                            label="Text Channels"
+                            
+                        />
+                    </div>
+                )}
+            </ScrollArea>
         </div>
      );
 }
