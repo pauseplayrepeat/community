@@ -4,6 +4,7 @@ import { redirectToSignIn } from "@clerk/nextjs";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import ChatHeader from "@/components/chat/chat-header";
+import { ChatInput } from "@/components/chat/chat-input";
 
 interface ChannelIdPageProps {
     params: {
@@ -47,6 +48,21 @@ const ChannelsPage = async ({
                     serverId={channel.serverId}
                     type="channel"
                />
+               <div>
+               {channel.type === "VIDEO" && (
+                    <MediaRoom
+                        chatId={channel.id}
+                        video={true}
+                        audio={true}
+                    />
+                )}
+               </div>
+               <div>
+                    Future Messages
+               </div>
+               <div>
+               </div>
+               <ChatInput />
             </div>
         </div>
         
