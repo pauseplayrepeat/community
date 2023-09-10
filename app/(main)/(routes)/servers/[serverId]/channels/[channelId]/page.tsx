@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import ChatHeader from "@/components/chat/chat-header";
 import { ChatInput } from "@/components/chat/chat-input";
+import { ChatMessages } from "@/components/chat/chat-messages";
 
 interface ChannelIdPageProps {
     params: {
@@ -56,10 +57,28 @@ const ChannelsPage = async ({
                         audio={true}
                     />
                 )}
+                {channel.type === "AUDIO" && (
+                    <MediaRoom
+                        chatId={channel.id}
+                        video={false}
+                        audio={true}
+                    />
+                )}
                </div>
-               <div>
-                    Future Messages
-               </div>
+               <ChatMessages 
+                    name={channel.name}
+                    member={member}
+                    chatId={channel.id}
+                    apiUrl="/api/socket/messages"
+                    socketUrl="/api/socket"
+                    socketQuery={{
+                        channelId: channel.id,
+                        serverId: channel.serverId,
+                    }}
+                    paramKey="channelId"
+                    paramValue={channel.id}
+                    type="channel"
+               />
                <ChatInput
                     apiUrl="/api/socket/messages"
                     query={{ 
