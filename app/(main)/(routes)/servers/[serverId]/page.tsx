@@ -1,3 +1,4 @@
+// import { PageHero } from "@/components/server/server-hero";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { redirectToSignIn } from "@clerk/nextjs";
@@ -46,6 +47,13 @@ const ServerIdPage = async ({
     }
 
     return redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`)
+
+    // return (   
+
+    //     <div>
+    //         <PageHero />
+    //     </div>
+    // );
 }
 
 export default ServerIdPage;

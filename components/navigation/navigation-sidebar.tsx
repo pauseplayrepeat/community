@@ -9,6 +9,10 @@ import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
 import { NavigationAction } from "./navigation-action";
 import { ModeToggle } from "../mode-toggle";
+import { PersonStanding, User } from "lucide-react";
+import Link from "next/link";
+import { GithubIcon } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider } from "../ui/tooltip";
 
 
 export const NavigationSidebar = async () => {
@@ -46,6 +50,16 @@ export const NavigationSidebar = async () => {
                 ))}
             </ScrollArea>
             <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipContent>
+                            Contribute to the project
+                        </TooltipContent>
+                            <Link href="https://github.com/pauseplayrepeat/community" className="text-zinc-500">
+                                <GithubIcon className="text-zinc-500 h-6 w-6" />
+                            </Link>
+                    </Tooltip>
+                </TooltipProvider>
                 <ModeToggle />
                 <UserButton 
                     afterSignOutUrl="/"

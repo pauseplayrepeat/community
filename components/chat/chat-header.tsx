@@ -2,6 +2,8 @@ import { Hash, Menu } from "lucide-react";
 import { MobileToggle } from "../mobile-toggle";
 import { UserAvatar } from "../user-avatar";
 import { SocketIndicator } from "../socket-indicator";
+import Link from "next/link";
+import { GithubIcon } from "lucide-react";
 
 interface ChatHeaderProps {
     serverId: string;

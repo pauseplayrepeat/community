@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import NavigationSidebar from "@/components/navigation/navigation-sidebar";
 import { UserButton } from "@clerk/nextjs";
 
