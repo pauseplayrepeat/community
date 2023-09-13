@@ -1,8 +1,8 @@
-## Community for Music Producers 🎶 ##
+# Community for Music Producers 🎶 #
 
 A community platform tailored for music producers to manage and engage with their communities. Build strong connections with fellow producers, attend events, get coaching, and showcase your social media links all in one place!
 
-# Features #
+## Features ##
 
 Profile Pages: Each user can add their social media links, view their joined communities, and more.
 
@@ -12,11 +12,11 @@ Events: Community leaders can host and manage events, including paid coaching se
 
 Interactive UI: A modern and interactive interface ensures the best user experience.
 
-# Tech Stack #
+## Tech Stack ##
 
 This project is built using Next.js and backed by Prisma for data management.
 
-# Key Packages: #
+## Key Packages: ##
 
 UI Components & Styling: @radix-ui, @livekit/components-react, tailwindcss
 
