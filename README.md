@@ -1,4 +1,4 @@
-Community for Music Producers 🎶
+## Community for Music Producers 🎶 ##
 
 A community platform tailored for music producers to manage and engage with their communities. Build strong connections with fellow producers, attend events, get coaching, and showcase your social media links all in one place!
 
