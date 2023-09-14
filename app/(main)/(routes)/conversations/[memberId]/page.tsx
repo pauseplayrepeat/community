@@ -31,7 +31,7 @@ interface MemberIdPageProps {
   
     const currentMember = await db.member.findFirst({
       where: {
-        serverId: params.serverId,
+        // serverId: params.serverId,
         profileId: profile.id,
       },
       include: {
@@ -46,7 +46,8 @@ interface MemberIdPageProps {
   const conversation = await getOrCreateConversation(currentMember.id, params.memberId);
 
   if (!conversation) {
-    return redirect(`/servers/${params.serverId}`);
+    // return redirect(`/conversations/${params.memberId}`);
+    return redirect("/");
   }
 
   const { memberOne, memberTwo } = conversation;

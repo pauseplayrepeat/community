@@ -49,7 +49,7 @@ export const ChatItem = ({
     const canEditMessage = !deleted && (isAdmin || isOwner);
     const isPDF = fileType === "pdf" && fileUrl;
     const isImage = !isPDF && fileUrl;
-
+    const isAudio = fileType === "mp3" || "wav" && fileUrl;
 
 
 
@@ -83,6 +83,25 @@ export const ChatItem = ({
                                 alt="Image"
                             />
                         </a>
+                )}
+                {isPDF && (
+                    <a 
+                        href={fileUrl} target="_blank" rel="noreferrer">
+                            <Image 
+                                src={fileUrl}
+                                width={200}
+                                height={200}
+                                alt="Image"
+                            />
+                        </a>
+                )}
+                {isAudio && (
+                    <a href={fileUrl ?? undefined} target="_blank" rel="noreferrer">
+                        <audio
+                            src={fileUrl ?? undefined}
+                            controls
+                        />
+                    </a>
                 )}
                 {content}
             </div>

@@ -27,9 +27,10 @@ export const ServerMember = ({
     const params = useParams();
     const icon = roleIconMap[member.role];
     const router = useRouter();
+    const profile = member.profile;
 
     const onClick = () => {
-        router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
+        router.push(`/profile/${profile.id}`);
     }
 
     return ( 

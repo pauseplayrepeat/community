@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { redirectToSignIn } from "@clerk/nextjs";
 import { User } from "lucide-react";
-// import { UserButton } from "@clerk/clerk-react";
+import { Button } from "@/components/ui/button";
+import MessageButton from "@/components/profile/message-button";
+import { UserAvatar } from "@/components/user-avatar";
 
 interface ProfileIdPageProps {
   params: {
@@ -15,20 +16,14 @@ interface ProfileIdPageProps {
 const ProfileIdPage = async ({
   params,
 }: ProfileIdPageProps) => {
-  const profile = await currentProfile();
-
-  if (!profile) {
-    return redirectToSignIn();
-  }
-
-  const profileData = await db.profile.findUnique({
+  const profile = await db.profile.findUnique({
     where: {
-      id: profile.id
+      id: params.profileId
     },
   });
 
-  if (!profileData) {
-    return redirect("/");
+  if (!profile) {
+    return redirectToSignIn();
   }
 
   return (
@@ -53,23 +48,29 @@ const ProfileIdPage = async ({
             "
           >
             <div className="relative h-32 w-32 lg:h-44 lg:w-44">
-            <User className="w-[150px] h-[150 px]"/>
+              {/* <div className="w-40 h-40"> */}
+                <UserAvatar
+                  src={profile.imageUrl}
+                  className="w-24 h-24 items-center justify-center"
+                />
+              {/* </div>  */}
             </div>
             <div className="flex flex-col gap-y-2 mt-4 md:mt-0">
               <p className="hidden md:block font-semibold text-sm">
                 Welcome back
               </p>
               <h1 
-                className="
-                  text-white 
-                  text-4xl 
-                  sm:text-5xl 
-                  lg:text-7xl 
-                  font-bold
+              className="
+              text-white 
+                text-4xl 
+                sm:text-5xl 
+                lg:text-7xl 
+                font-bold
                 "
               >
-                {profileData.name}
-              </h1>
+              {profile.name}
+            </h1>
+              <MessageButton profileId={profile.id}/>
             </div>
           </div>
         </div>

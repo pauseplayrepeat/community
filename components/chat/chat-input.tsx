@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { EmojiPicker } from "@/components/emoji-picker";
 
 import {
   Form,
@@ -87,9 +88,9 @@ export const ChatInput = ({
                     {...field}
                   />
                   <div className="absolute top-7 right-8">
-                    {/* <EmojiPicker
+                    <EmojiPicker
                       onChange={(emoji: string) => field.onChange(`${field.value} ${emoji}`)}
-                    /> */}
+                    />
                   </div>
                 </div>
               </FormControl>
